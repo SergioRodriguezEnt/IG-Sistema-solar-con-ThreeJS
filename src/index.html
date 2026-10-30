@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Sistema solar · three.js</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      #app canvas {
+        display: block;
+      }
+
+      /* Panel de ayuda: discreto, abajo a la izquierda */
+      #panel {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        max-width: 280px;
+        padding: 12px 14px;
+        color: rgba(255, 255, 255, 0.85);
+        background: rgba(10, 12, 20, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        backdrop-filter: blur(6px);
+        font-size: 12px;
+        line-height: 1.5;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      #panel-titulo {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      #panel-subtitulo {
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 1px;
+      }
+
+      #panel-ayuda {
+        list-style: none;
+        margin: 8px 0 0;
+        padding: 0;
+      }
+
+      #panel-ayuda li {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      #panel-ayuda span {
+        color: rgba(255, 255, 255, 0.6);
+        text-align: right;
+      }
+
+      kbd {
+        font-family: inherit;
+        color: #fff;
+      }
+
+      /* Nombre del astro bajo el puntero */
+      #etiqueta {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 2px 8px;
+        color: #fff;
+        background: rgba(10, 12, 20, 0.6);
+        border-radius: 6px;
+        font-size: 12px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.12s;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body style="margin: 0">
+    <div id="app"></div>
+    <div id="panel">
+      <div id="panel-titulo"></div>
+      <div id="panel-subtitulo"></div>
+      <ul id="panel-ayuda"></ul>
+    </div>
+    <div id="etiqueta"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
